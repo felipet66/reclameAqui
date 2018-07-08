@@ -56,4 +56,16 @@ public class ComplaintService {
 		return new Complaint(complaintDtoObj.getId(), complaintDtoObj.getTitle(), 
 				complaintDtoObj.getDescription(), complaintDtoObj.getLocale(), complaintDtoObj.getCompany());
 	}
+	
+	public List<Complaint> findByTitle(String text){
+        return repo.findByTitleContainingIgnoreCase(text);
+    }
+	
+	public List<Complaint> findByDescription(String text){
+        return repo.findByTitleContainingIgnoreCase(text);
+    }
+	
+	public List<Complaint> findByCompany(String text){
+        return repo.findByTitleContainingIgnoreCase(text);
+    }
 }
