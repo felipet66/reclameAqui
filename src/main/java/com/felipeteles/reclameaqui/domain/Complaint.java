@@ -2,10 +2,15 @@ package com.felipeteles.reclameaqui.domain;
 
 import java.io.Serializable;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document
 public class Complaint implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
-	private Integer id;
+	@Id
+	private String id;
 	private String title;
 	private String description;
 	private String locale;
@@ -15,7 +20,7 @@ public class Complaint implements Serializable{
 		
 	}
 
-	public Complaint(Integer id, String title, String description, String locale, String company) {
+	public Complaint(String id, String title, String description, String locale, String company) {
 		super();
 		this.id = id;
 		this.title = title;
@@ -24,11 +29,11 @@ public class Complaint implements Serializable{
 		this.company = company;
 	}
 
-	public Integer getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 
