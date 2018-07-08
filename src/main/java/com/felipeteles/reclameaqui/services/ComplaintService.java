@@ -30,6 +30,11 @@ public class ComplaintService {
 		return repo.insert(complaintObj);
 	}
 	
+	public void delete(String id) {
+		findById(id);
+		repo.deleteById(id);
+	}
+	
 	public Complaint fromDTO(ComplaintDTO complaintDtoObj) {
 		return new Complaint(complaintDtoObj.getId(), complaintDtoObj.getTitle(), 
 				complaintDtoObj.getDescription(), complaintDtoObj.getLocale(), complaintDtoObj.getCompany());
