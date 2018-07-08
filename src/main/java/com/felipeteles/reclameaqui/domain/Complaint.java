@@ -31,8 +31,7 @@ public class Complaint implements Serializable{
 	@NotNull(message = "Field \"description\" can not be emptys.")
 	private String description;
 	
-	@NotNull(message = "Field \"locale\" can not be emptys.")
-	private String locale;
+	private Locale locale;
 	
 	@NotNull(message = "Field \"company\" can not be emptys.")
 	private String company;

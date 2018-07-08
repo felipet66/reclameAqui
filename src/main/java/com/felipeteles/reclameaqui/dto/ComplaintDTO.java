@@ -5,6 +5,8 @@ import java.io.Serializable;
 import javax.validation.constraints.NotNull;
 
 import com.felipeteles.reclameaqui.domain.Complaint;
+import com.felipeteles.reclameaqui.domain.Locale;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -28,7 +30,7 @@ public class ComplaintDTO implements Serializable{
 	private String description;
 	
 	@NotNull(message = "Field \"locale\" can not be emptys.")
-	private String locale;
+	private Locale locale;
 	
 	@NotNull(message = "Field \"company\" can not be emptys.")
 	private String company;
