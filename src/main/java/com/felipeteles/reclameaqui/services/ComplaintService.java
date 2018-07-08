@@ -35,6 +35,23 @@ public class ComplaintService {
 		repo.deleteById(id);
 	}
 	
+	public Complaint update(Complaint complaintObj) {
+		Complaint newComplaint = findById(complaintObj.getId());
+		updateData( newComplaint, complaintObj);
+		return repo.save(newComplaint);
+	}
+	
+	private void updateData(Complaint newComplaint, Complaint complaintObj) {
+		newComplaint.setTitle(complaintObj
+				.getTitle());
+		newComplaint.setDescription(complaintObj
+				.getDescription());
+		newComplaint.setLocale(complaintObj
+				.getLocale());
+		newComplaint.setCompany(complaintObj
+				.getCompany());
+	}
+
 	public Complaint fromDTO(ComplaintDTO complaintDtoObj) {
 		return new Complaint(complaintDtoObj.getId(), complaintDtoObj.getTitle(), 
 				complaintDtoObj.getDescription(), complaintDtoObj.getLocale(), complaintDtoObj.getCompany());

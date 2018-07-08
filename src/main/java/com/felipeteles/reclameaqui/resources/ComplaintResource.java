@@ -50,4 +50,12 @@ public class ComplaintResource {
 		service.delete(id);
 		return ResponseEntity.noContent().build();
 	}
+	
+	@RequestMapping(value="/{id}", method=RequestMethod.PUT)
+	public ResponseEntity<Void> update(@RequestBody ComplaintDTO complaintDtoObj, @PathVariable String id) {	
+		Complaint complaintObj = service.fromDTO(complaintDtoObj);
+		complaintObj.setId(id);
+		complaintObj = service.update(complaintObj);
+		return ResponseEntity.noContent().build();
+	}
 }
